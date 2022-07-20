@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 
@@ -7,7 +9,7 @@ class BaseManager(models.Manager):
 
 
 class BaseModel(models.Model):
-    id = models.UUIDField()
+    id = models.UUIDField(default=uuid.uuid4)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_deleted = models.BooleanField(default=False)
