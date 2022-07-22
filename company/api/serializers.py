@@ -28,4 +28,3 @@ class CompanyTypeSerializer(serializers.ModelSerializer):
         model = CompanyType
         fields = ['id', 'type']
         read_only_fields = ['id']
-        
