@@ -39,16 +39,23 @@ class Company(BaseModel):
         return self.name
 
 
+class EmployeeType(BaseModel):
+    type = models.CharField(_('type'), max_length=150)
+
+    def __str__(self):
+        return self.type
+
+
 class Employee(BaseModel):
     name = models.CharField(_('name'), max_length=150, )
     image = models.ImageField(upload_to='employee/images/', verbose_name=_('images'))
     description = models.TextField(verbose_name=_('description'))
-    type = models.ForeignKey(CompanyType, verbose_name=_('type'), on_delete=models.PROTECT, related_name='employees')
+    type = models.ForeignKey(EmployeeType, verbose_name=_('type'), on_delete=models.PROTECT, related_name='employees')
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='employees', verbose_name=_('company'))
 
     def __str__(self):
         return f"{self.name} | {self.type}"
-        
+
     class Meta:
         verbose_name = _('employee')
         verbose_name_plural = _('employees')
