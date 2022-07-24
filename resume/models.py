@@ -16,4 +16,3 @@ class Resume(BaseModel):
         verbose_name = _('resume')
         verbose_name_plural = _('resumes')
         db_table = 'resume'
-        
