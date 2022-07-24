@@ -1,0 +1,1 @@
+from escrow.celery import celery

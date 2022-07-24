@@ -146,3 +146,8 @@ DJOSER = {
         'current_user': 'accounts.api.serializers.UserSerializer',
     },
 }
+CELERY_TIMEZONE = 'Asia/Tehran'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/1'
+
+CELERY_TASK_TIME_LIMIT = 5 * 60
