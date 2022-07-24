@@ -13,6 +13,7 @@ class ResumeSerializers(serializers.ModelSerializer):
         }
 
     job_seeker = serializers.SerializerMethodField('get_job_seeker')
+    id = serializers.UUIDField(read_only=True)
 
     class Meta:
         model = Resume
