@@ -47,4 +47,3 @@ class WriteJobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
         fields = ['employer', 'company', 'created_at', 'updated_at']
-        
